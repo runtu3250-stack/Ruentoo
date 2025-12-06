@@ -1,15 +1,23 @@
 // ==UserScript==
 // @name            Bypass Paywalls Clean - de/at/ch + Bloomberg/FT
-// @version         4.2.3.6
+// @version         1.1
 // @description     Bypass Paywalls of news sites including Bloomberg and Financial Times
-// @author          magnolia1234 (modified by AI)
-// @downloadURL     https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=userscript/bpc.de.user.js
-// @updateURL       https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=userscript/bpc.de.user.js
-// @homepageURL     https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters
-// @supportURL      https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters
-// @license         MIT; https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=LICENSE
+// @author          runtu3250-stack
+// @downloadURL     https://github.com/runtu3250-stack/Ruentoo/blob/main/bpc.en.user.js
+// @updateURL       https://github.com/runtu3250-stack/Ruentoo/blob/main/bpc.en.user.js
+// @homepageURL     https://github.com/runtu3250-stack/Ruentoo
+// @supportURL      https://github.com/runtu3250-stack/Ruentoo
 // @noframes
 // @match           *://*.de/*
+// @match           *://*.com/*
+// @match           *://*.co.uk/*
+// @match           *://*.com.au/*
+// @match           *://*.co/*
+// @match           *://*.io/*
+// @match           *://*.net/*
+// @match           *://*.net.au/*
+// @match           *://*.org/*
+// @match           *://*.pub/*
 // @match           *://*.beobachter.ch/*
 // @match           *://*.blick.ch/*
 // @match           *://*.faz.net/*
@@ -32,7 +40,7 @@
 // @connect         fnetcore-api-prod.azurewebsites.net
 // @connect         funkemedien.de
 // @grant           GM.xmlHttpRequest
-// @require         https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=userscript/bpc_func.js
+// @require         https://github.com/runtu3250-stack/Ruentoo/blob/main/bpc_func.js
 // ==/UserScript==
 (function() {
   //'use strict';
