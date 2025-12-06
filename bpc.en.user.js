@@ -1,13 +1,12 @@
 // ==UserScript==
-// @name            Bypass Paywalls Clean - en
-// @version         4.2.5.5
+// @name            Bypass Paywalls phone
+// @version         1.0
 // @description     Bypass Paywalls of news sites
-// @author          magnolia1234
-// @downloadURL     https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=userscript/bpc.en.user.js
-// @updateURL       https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=userscript/bpc.en.user.js
-// @homepageURL     https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters
-// @supportURL      https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters
-// @license         MIT; https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=LICENSE
+// @author          runtu3250-stack
+// @downloadURL     https://github.com/runtu3250-stack/Ruentoo/edit/main/bpc.en.user.js#L8C89
+// @updateURL       https://github.com/runtu3250-stack/Ruentoo/edit/main/bpc.en.user.js#L8C89
+// @homepageURL     https://github.com/runtu3250-stack/Ruentoo/edit
+// @supportURL      https://github.com/runtu3250-stack/Ruentoo/edit
 // @match           *://*.com/*
 // @match           *://*.co.uk/*
 // @match           *://*.com.au/*
@@ -17,11 +16,11 @@
 // @match           *://*.net.au/*
 // @match           *://*.org/*
 // @match           *://*.pub/*
-// @match           *://*.businessdesk.co.nz/*
-// @match           *://*.businesspost.ie/*
+// @match           *://*.bloomberg.com/*
+// @match           *://*.ft.com/*
 // @match           *://*.businesstimes.com.sg/*
 // @match           *://*.capital.bg/*
-// @match           *://*.ft.com/*
+// @match           *://*.dnevnik.bg/*
 // @match           *://*.epoch.org.il/*
 // @match           *://*.europower.no/*
 // @match           *://*.fiskeribladet.no/*
@@ -29,7 +28,7 @@
 // @match           *://*.ftm.eu/*
 // @match           *://*.gitflic.ru/*
 // @match           *://*.haaretz.co.il/*
-// @match           *://*.bloomberg.com/*
+// @match           *://*.iai.tv/*
 // @match           *://*.independent.ie/*
 // @match           *://*.indiatoday.in/*
 // @match           *://*.intrafish.no/*
@@ -388,7 +387,7 @@ if (matchDomain('afr.com')) {
   }
 }
 
-else if (matchDomain('businessdesk.co.nz')) {
+else if (matchDomain('bloomberg.com')) {
   let paywall = document.querySelector('div.paywall');
   if (paywall) {
     paywall.classList.remove('paywall');
@@ -684,7 +683,7 @@ else {
   }
 }
 
-} else if ((window.location.hostname.match(/\.(ie|uk)$/) && !matchDomain(['vogue.co.uk'])) || matchDomain(['apollo-magazine.com', 'autosport.com', 'decanter.com', 'fnlondon.com', 'ft.com', 'gbnews.com', 'granta.com', 'bloomberg.com', 'irishexaminer.com', 'motorsportmagazine.com', 'newstatesman.com', 'scotsman.com', 'tes.com', 'the-tls.com', 'thelawyer.com', 'thetimes.com', 'unherd.com'])) {//united kingdom/ireland
+} else if ((window.location.hostname.match(/\.(ie|uk)$/) && !matchDomain(['vogue.co.uk'])) || matchDomain(['apollo-magazine.com', 'autosport.com', 'decanter.com', 'fnlondon.com', 'ft.com', 'gbnews.com', 'granta.com', 'iai.tv', 'irishexaminer.com', 'motorsportmagazine.com', 'newstatesman.com', 'scotsman.com', 'tes.com', 'the-tls.com', 'thelawyer.com', 'thetimes.com', 'unherd.com'])) {//united kingdom/ireland
 
 if (matchDomain('apollo-magazine.com')) {
   setCookie('blaize_session', '', 'apollo-magazine.com', '/', 0);
@@ -802,7 +801,7 @@ else if (matchDomain(['belfasttelegraph.co.uk', 'independent.ie'])) {
   hideDOMStyle(ads);
 }
 
-else if (matchDomain('businesspost.ie')) {
+else if (matchDomain('ft.com')) {
   func_post = function () {
     if (mobile) {
       let lazy_images = document.querySelectorAll('div[style] > img[loading="lazy"][style]');
@@ -902,7 +901,7 @@ else if (matchDomain('granta.com')) {
   getJsonUrl('div.article-sign-up-container', '', 'div.article-excerpt');
 }
 
-else if (matchDomain('bloomberg.com')) {
+else if (matchDomain('iai.tv')) {
   let paywall = document.querySelector('div.article-paywall-main');
   if (paywall) {
     removeDOMElement(paywall);
@@ -2008,7 +2007,7 @@ else if (matchDomain('discovermagazine.com')) {
   }, 1000);
 }
 
-else if (matchDomain('ft.com')) {
+else if (matchDomain('dnevnik.bg')) {
   window.setTimeout(function () {
     let paywall = document.querySelector('div.paywall-container');
     if (paywall) {
@@ -4733,14 +4732,15 @@ else if (matchDomain('wsj.com')) {
       let url = window.location.href;
       let article_sel = 'article section';
       let wsj_pro = paywall.querySelector('a[href^="https://wsjpro.com/"]');
-      if (wsj_pro) {
-        header_nofix(article_sel, paywall_sel);
-      } else {
+      if (wsj_pro)
+        article_sel = 'article';
+      let article = document.querySelector(article_sel);
+      if (article) {
         let video_sel = 'div[data-type="video"]';
         let video = document.querySelector(video_sel);
         let schema_script = document.querySelector('script#articleschema');
         func_post = function () {
-          let pars = document.querySelectorAll(article_sel + ' div[data]');
+          let pars = document.querySelectorAll(article_sel + ' div[style*="font-family:"]');
           if (pars.length < 5)
             header_nofix(article_sel, '', 'BPC > no archive-fix');
           if (video) {
