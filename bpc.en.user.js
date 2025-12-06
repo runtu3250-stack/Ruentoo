@@ -142,7 +142,7 @@
 // @exclude         *://*.valeursactuelles.com/*
 // @exclude         *://*.wochenblatt.com/*
 // @grant           GM.xmlHttpRequest
-// @require         https://gitflic.ru/project/magnolia1234/bypass-paywalls-clean-filters/blob/raw?file=userscript/bpc_func.js
+// @require         https://github.com/runtu3250-stack/Ruentoo/blob/main/bpc_func.js
 // ==/UserScript==
 
 (function() {
