@@ -3,10 +3,10 @@
 // @version         1.0
 // @description     Bypass Paywalls of news sites
 // @author          runtu3250-stack
-// @downloadURL     https://github.com/runtu3250-stack/Ruentoo/edit/main/bpc.en.user.js
-// @updateURL       https://github.com/runtu3250-stack/Ruentoo/edit/main/bpc.en.user.js
-// @homepageURL     https://github.com/runtu3250-stack/Ruentoo/edit
-// @supportURL      https://github.com/runtu3250-stack/Ruentoo/edit
+// @downloadURL     https://github.com/runtu3250-stack/Ruentoo/blob/main/bpc.en.user.js
+// @updateURL       https://github.com/runtu3250-stack/Ruentoo/blob/main/bpc.en.user.js
+// @homepageURL     https://github.com/runtu3250-stack/Ruentoo
+// @supportURL      https://github.com/runtu3250-stack/Ruentoo
 // @match           *://*.com/*
 // @match           *://*.co.uk/*
 // @match           *://*.com.au/*
